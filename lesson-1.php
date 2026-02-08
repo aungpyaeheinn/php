@@ -348,6 +348,20 @@
     } else {
         echo "No,It isn't";
     }
+
+    echo "<br>";
+    
+    echo date('m/D/Y');
+
+    echo "<br>";
+
+    echo date('D/M/Y');
+
+    echo "<br>";
+
+    echo date('D-M-Y-l');
+
+
     ?>
 </body>
 
