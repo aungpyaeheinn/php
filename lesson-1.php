@@ -260,6 +260,94 @@
         echo "I love you so much my bby Su Myat Htet ❤️ <br>";
         $count++;
     }
+
+    $flowers = [['Roses', 'Tulips', 'Lilies'],['Daisies', 'Orchids', 'Sunflowers']];
+
+    foreach ($flowers as $f) {
+        echo $f[0] . ' ' . $f[2] . "<br>";
+    }
+
+    function hello() {
+        echo "test function";
+    }
+
+    hello();
+
+    echo "<br>";
+
+    function hey($name){
+        echo "Hey!";
+    }
+
+    hey($name);
+
+    function heyo($name){
+        echo "Hey $name!";
+    }
+
+    heyo('Luis');
+
+    function test(){
+        return "haha";
+    }
+
+    echo test();
+
+    echo "<br>";
+
+    function restParameter($parameter1, ...$parameter2) {
+        echo "Hello $parameter1";
+        echo "<br>";
+        var_dump($parameter2[0]);
+    }
+
+    restParameter("World!", "I love Programming.", "I code everyday.");
+
+    function nameArgument($name, $job) {
+        echo "Hello! My name is $name. I'm $job";
+    }
+
+    nameArgument(job: "Junior PHP(Laravel) Developer", name: "Aung Pyae Hein");
+
+    echo "<br>";
+
+    $name = "Aung Pyae Hein"; // Global Scope Variable
+
+    function LocalScope() {
+        global $name;
+        $age = 22;
+        // echo "Hello! My Name is $name. I'm $age years old.";
+        echo "Hello! " . $GLOBALS['name'] ." . I'm $age years old";
+    } // Local Scope Function
+
+    LocalScope();
+
+    // echo $age;
+
+    echo "<br>";
+
+    function scalarTypeHinting(int | string $value) {
+        echo $value;
+    }
+
+    scalarTypeHinting("GGWP");
+
+    echo "<br>";
+
+    function returnTypeHinting($value): int {
+        echo $value;
+        return $value;
+    }
+
+    returnTypeHinting(9);
+
+    echo "<br>";
+
+    if(function_exists('returnTypeHinting')) {
+        echo "Yes,it exists";
+    } else {
+        echo "No,It isn't";
+    }
     ?>
 </body>
 
