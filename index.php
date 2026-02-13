@@ -1,5 +1,5 @@
 <?php
-print_r($_REQUEST);
+echo "<pre>" . print_r($_FILES, true) . "</pre>";
 echo "<br>";
 if (isset($_POST['submitBtn'])) {
     echo $_POST["name"];
@@ -9,6 +9,9 @@ if (isset($_POST['submitBtn'])) {
     echo $_POST['city'];
     echo "<br>";
     echo $_POST['gender'];
+    echo "<br>";
+    print_r($_POST['language']);
+    echo "<br>";
 }
 ?>
 
@@ -23,9 +26,9 @@ if (isset($_POST['submitBtn'])) {
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="px-3">
     <div class="container p-5">
-        <form action="index.php" method="POST">
+        <form action="index.php" method="POST" enctype="multipart/form-data">
             <div class="mb-2">
                 <input type="text" name="name" class="form-control" placeholder="name">
             </div>
@@ -46,12 +49,16 @@ if (isset($_POST['submitBtn'])) {
             </div>
             <div class="mb-2">
                 <label for="">Skills</label>
-                <input type="checkbox" name="Language" value="PHP" id="PHP">
+                <br>
+                <input type="checkbox" name="language[]" value="PHP" id="PHP">
                 <label for="PHP">PHP</label>
-                <input type="checkbox" name="Language" value="PHP" id="PHP">
-                <label for="PHP">PHP</label>
-                <input type="checkbox" name="Language" value="PHP" id="PHP">
-                <label for="PHP">PHP</label>
+                <input type="checkbox" name="language[]" value="Javascript" id="Javascript">
+                <label for="Javascript">Javascript</label>
+                <input type="checkbox" name="language[]" value="Java" id="Java">
+                <label for="Java">Java</label>
+            </div>
+            <div class="mb-2">
+                <input type="file" name="photo" class="form-control">  
             </div>
             <button name="submitBtn" class="btn btn-primary">Submit</button>
         </form>
