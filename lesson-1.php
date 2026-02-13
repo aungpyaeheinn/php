@@ -44,7 +44,7 @@
     echo "<br>";
     define("Name", "define method test = ");
     define("Age", "23");
-    echo Name, Age;
+    // echo Name, Age;
     $age = 23;
     echo "<br>";
     echo isset($age);
@@ -360,8 +360,37 @@
     echo "<br>";
 
     echo date('D-M-Y-l');
+    
+    echo "<br>";
 
+    date_default_timezone_set('Asia/Yangon');
 
+    echo date('m/d/Y H:i:s A');
+
+    echo "<br>";
+
+    echo date('d-m-Y h:i:s a');
+
+    echo "<br>";
+
+    $name = "Aung Pyae Hein";
+
+    function infos(){
+        $age = 22;
+        echo "My name is " . $GLOBALS['name'] . ". I am $age years old.";
+    }
+
+    infos();
+
+    echo "<br>";
+
+    echo '<pre>' . print_r($_SERVER,true) . '</pre>';
+
+    echo "<br>";
+
+    echo $_SERVER['HTTP_HOST'];
+
+    // header("location:content.php");
     ?>
 </body>
 
