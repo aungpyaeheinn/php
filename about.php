@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
 echo "about page";
 
-// header("location:index.php");
+echo "<br>";
+
+if(!isset($_SESSION['name'])){
+    header("location:index.php");
+}
+
+echo $_SESSION['name'];

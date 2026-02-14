@@ -1,6 +1,11 @@
 <?php
+session_start();
+
+echo $_SESSION['test'];
+
 echo "<pre>" . print_r($_FILES, true) . "</pre>";
 echo "<br>";
+
 if (isset($_POST['submitBtn'])) {
     echo $_POST["name"];
     echo "<br>";
@@ -12,6 +17,14 @@ if (isset($_POST['submitBtn'])) {
     echo "<br>";
     print_r($_POST['language']);
     echo "<br>";
+
+    $photoTmp = $_FILES['photo']['tmp_name'];
+    $photoName = $_FILES['photo']['name'];
+    $photoType = $_FILES['photo']['type'];
+
+    if(in_array($photoType,['image/png, image/jpg', 'image/jpeg', 'application/pdf'])) {
+    move_uploaded_file($photoTmp,"photos/$photoName");
+    }
 }
 ?>
 
