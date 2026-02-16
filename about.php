@@ -7,7 +7,7 @@ echo "about page";
 echo "<br>";
 
 if(!isset($_SESSION['name'])){
-    header("location:index.php");
+    header("location:login-session.php");
 }
 
 echo $_SESSION['name'];

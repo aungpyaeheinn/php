@@ -3,11 +3,11 @@
 session_start();
 
 if(!isset($_SESSION['name'])){
-    header("location:index.php");
+    header("location:login-session.php");
 }
 
 session_destroy();
 
-header("location:index.php");
+header("location:login-session.php");
 
 // unset($_SESSION['hello_world_session']);    
